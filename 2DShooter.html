@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<title>2D Beginner Shooter Games</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="2DShooter.html" class="active">Project</a></li>
+						<li><a href="index.html#one">Other Projects</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <h2 class="major">2D Beginner Shooter Games</h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+               <!-- Indicators -->
+								 <ol class="carousel-indicators"></ol>
+
+              <!-- Wrapper for slides -->
+								<div class="carousel-inner">
+									<div class="item active">
+									  <img src="images/2DShooter/shooter1.jpeg" alt="">
+									</div>
+									<div class="item">
+										<img src="images/2DShooter/shooter2.jpeg" alt="">
+									</div>
+									<div class="item">
+										<img src="images/2DShooter/shooter3.jpeg" alt="">
+									</div>
+								</div>
+
+                <!-- Controls -->
+									<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+										<span class="glyphicon glyphicon-chevron-left"></span>
+									</a>
+									<a class="right carousel-control" href="#myCarousel" data-slide="next">
+										<span class="glyphicon glyphicon-chevron-right"></span>
+									</a>
+            </div>
+
+            <h1>Project 1</h1>
+			<p>This is a 2D shooter spaceship game. It's a similar game to the game i uploaded before but with better mechanics and visuals. Our spaceship can shoot at the enemy space ships but we also have to shoot at the meteoroids which occurs randomly. The meteoroids have life bars. If we keep shooting at them, they'll explode when the life bar hits "0". The enemy spaceships do not have a life bar, if we shoot at them one time they'll explode. Our character can move around with "WASD" and with arrow keys. We can press the keys all together in that case the asset changes. This project is made with C# using Unity. The assets are from asset store.</p>
+			<h1>Project 2</h1>
+            <p>I made this 2D shooter game with C# in Unity, for taking a step into the game development world. It's a bit basic game but it contains a main character, enemies which can also shoot at us, a life bar for us to track our character's remaining life and the total point that we gain from shooting the enemy. Our character can move around with "WASD" or with arrow keys. We can shoot at our enemies with space bar. If we shoot an enemy, the points will be increase and if an enemy shoots us, our life will be decreased. If our life bar reach the 0 point, the game will be paused and end. I did not make any screens for starting again for something like that. This game was just a starter for me.</p>
+            
+            <h1>Technical Details</h1>
+            <p>Platform: Unity </p>
+            <p>Language: C#</p> 
+            <h1>What I Learned</h1>
+            <p>•	Gained hands-on experience with assets, animations, and game mechanics, including creating a continuous background, adding music, sound effects, and implementing explosions and life bars.</p>
+            <p>•	Enhanced understanding of how code influences game behaviors and interactivity.</p>
+			<h1>Github Link:</h1><a href="https://github.com/edaeren/2DShooterSpaceShip">https://github.com/edaeren/2DShooterSpaceShip</a> 
+        </div>
+    </section>
+</div>
+
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<!--<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>-->
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				document.addEventListener("DOMContentLoaded", function () {
+				  const carouselInner = document.querySelector(".carousel-inner");
+				  const indicatorsContainer = document.querySelector(".carousel-indicators");
+			  
+				  if (carouselInner && indicatorsContainer) {
+					const items = carouselInner.querySelectorAll(".item");
+			  
+					items.forEach((item, index) => {
+					  const li = document.createElement("li");
+					  li.setAttribute("data-target", "#myCarousel");
+					  li.setAttribute("data-slide-to", index);
+			  
+					  // Set the first indicator as active
+					  if (index === 0) {
+						li.classList.add("active");
+					  }
+			  
+					  indicatorsContainer.appendChild(li);
+					});
+				  }
+				});
+			  </script>
+
+	</body>
+</html>
