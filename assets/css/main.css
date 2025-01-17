@@ -3248,157 +3248,138 @@ input, select, textarea {
 
 		}
 
-/* Spotlights */
+		/* Spotlights */
+.spotlights > section {
+    display: flex;
+    flex-direction: row; /* Always keep row direction */
+    min-height: 20.5em;
+    height: auto;
+    margin: 2em auto;
+    max-width: 1200px;
+    padding: 0 1em;
+}
 
-		/* Solid border */
-		hr.solid {
-			width: 97%;
-			margin:auto;
-			height: 1em;
-			
-		  }
-			.spotlights > section {
-				display: -moz-flex;
-				display: -webkit-flex;
-				display: -ms-flex;
-				display: flex;
-				-moz-flex-direction: row;
-				-webkit-flex-direction: row;
-				-ms-flex-direction: row;
-				flex-direction: row;
-				min-height: 20.5em;
-				height: 10em;
-				/*margin-left: 17%;*/
-		
-			}
-		
-				body.is-ie .spotlights > section {
-					min-height: 0;
-				}
-		
-			
-				.spotlights > section > .image {
-					background-position: center center;
-					background-size:cover;
-					border-radius: 50;
-					display: block;
-					position: relative;
-					width: 25em;
-					
-					
-				}
-		
-					.spotlights > section > .image img {
-						border-radius: 0;
-						display: block;
-						
-					}
-		
-					.spotlights > section > .image:before {
-						-moz-transition: opacity 1s ease;
-						-webkit-transition: opacity 1s ease;
-						-ms-transition: opacity 1s ease;
-						transition: opacity 1s ease;
-						background: #d7e7866e;
-						content: '';
-						display: block;
-						height: 100%;
-						left: 0;
-						opacity: 0;
-						position: absolute;
-						top: 0;
-						width: 100%;
-					}
-		
-				.spotlights > section > .content {
-					padding: 4em 5em 2em 5em ;
-					display: -moz-flex;
-					display: -webkit-flex;
-					display: -ms-flex;
-					display: flex;
-					-moz-flex-direction: column;
-					-webkit-flex-direction: column;
-					-ms-flex-direction: column;
-					flex-direction: column;
-					-moz-justify-content: center;
-					-webkit-justify-content: center;
-					-ms-justify-content: center;
-					justify-content: center;
-					width: 45em;
-					-ms-flex: 1;
-				}
-		
-					.spotlights > section > .content > .inner {
-						-moz-transform: translateX(0) translateY(0);
-						-webkit-transform: translateX(0) translateY(0);
-						-ms-transform: translateX(0) translateY(0);
-						transform: translateX(0) translateY(0);
-						-moz-transition: opacity 1s ease, -moz-transform 1s ease;
-						-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-						-ms-transition: opacity 1s ease, -ms-transform 1s ease;
-						transition: opacity 1s ease, transform 1s ease;
-						opacity: 1;
-					}
-		
-				.spotlights > section.inactive > .image:before,
-				body.is-preload .spotlights > section > .image:before {
-					opacity: 1;
-				}
-		
-				.spotlights > section.inactive > .content > .inner,
-				body.is-preload .spotlights > section > .content > .inner {
-					-moz-transform: translateX(-1em);
-					-webkit-transform: translateX(-1em);
-					-ms-transform: translateX(-1em);
-					transform: translateX(-1em);
-					opacity: 0;
-				}
-		
-				@media screen and (max-width: 1680px) {
-		
-					.spotlights > section > .content {
-						padding: 2em 4em 2em 4em ;
-					}
-		
-				}
-		
-				@media screen and (max-width: 500px) {
-		
-					.spotlights > section {
-						display: block;
-					}
-		
-						.spotlights > section > .image {
-							width: 100%;
-							height: 50vh;
-						}
-		
-						.spotlights > section > .content {
-							width: 100%
-						}
-		
-						.spotlights > section.inactive > .content > .inner,
-						body.is-preload .spotlights > section > .content > .inner {
-							-moz-transform: translateY(1em);
-							-webkit-transform: translateY(1em);
-							-ms-transform: translateY(1em);
-							transform: translateY(1em);
-						}
-		
-				}
-		
-				@media screen and (max-width: 736px) {
-		
-					.spotlights > section > .image {
-						height: 50vh;
-						min-height: 15em;
-					}
-		
-					.spotlights > section > .content {
-						padding: 3em 2em 1em 2em ;
-					}
-		
-				}
+/* Image styling */
+.spotlights > section > .image {
+    background-position: center center;
+    background-size: cover;
+    border-radius: 0;
+    display: block;
+    position: relative;
+    width: 25em;
+    min-width: 200px;
+    overflow: hidden;
+}
+
+.spotlights > section > .image img {
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content styling */
+.spotlights > section > .content {
+    padding: 2em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45em;
+    max-width: 100%;
+    flex: 1;
+}
+
+.spotlights > section > .content > .inner {
+    transform: translateX(0) translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Horizontal rule styling */
+hr.solid {
+    width: 97%;
+    margin: 2em auto;
+    height: 1em;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 1200px) {
+    .spotlights > section > .content {
+        padding: 2em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .spotlights > section {
+        padding: 1em;
+        min-height: auto;
+    }
+
+    .spotlights > section > .image {
+        width: 40%;
+        min-width: 130px;
+    }
+
+    .spotlights > section > .content {
+        width: 60%;
+        padding: 1em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .spotlights > section {
+        flex-direction: row; /* Keep row direction */
+        margin: 1em 0;
+        gap: 0.5em; /* Add space between image and content */
+    }
+
+    .spotlights > section > .image {
+        width: 35%;
+        min-width: 100px;
+        height: auto;
+        min-height: 150px;
+    }
+
+    .spotlights > section > .content {
+        width: 65%;
+        padding: 0.5em;
+    }
+
+    .spotlights > section > .content > .inner {
+        text-align: left;
+    }
+
+    .spotlights > section > .content > .inner h2 {
+        font-size: 1.2em; /* Smaller heading for narrow screens */
+        margin-bottom: 0.5em;
+    }
+
+    .spotlights > section > .content > .inner p {
+        font-size: 0.9em; /* Slightly smaller text for narrow screens */
+        line-height: 1.4;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .spotlights > section {
+        gap: 0.3em;
+    }
+
+    .spotlights > section > .image {
+        min-width: 80px;
+        width: 30%;
+    }
+
+    .spotlights > section > .content {
+        width: 70%;
+        padding: 0.3em;
+    }
+}
+
+
 		
 		/* Table */
 		
@@ -4304,3 +4285,73 @@ input, select, textarea {
 			}
 
 		}
+
+/* Keep everything the same but update the scaling media queries */
+
+/* Scale down for large screens */
+@media screen and (min-width: 1440px) {
+    .spotlights > section {
+        transform: scale(0.8) !important;
+        transform-origin: left top !important;
+        margin-bottom: -4em !important;
+    }
+    
+    #main > section {
+        transform: scale(0.8) !important;
+        transform-origin: left top !important;
+        margin-bottom: -4em !important;
+    }
+
+    #banner {
+        transform: none !important;
+    }
+
+    hr.solid {
+        margin: 1em 0 !important;
+    }
+
+    .wrapper.style1 {
+        padding: 1em 0 !important;
+    }
+}
+
+/* Add intermediate breakpoint */
+@media screen and (min-width: 1630px) {
+    .spotlights > section {
+        transform: scale(0.75) !important;
+        transform-origin: left top !important;
+        margin-bottom: -5em !important;
+    }
+    
+    #main > section {
+        transform: scale(0.75) !important;
+        transform-origin: left top !important;
+        margin-bottom: -5em !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .spotlights > section {
+        transform: scale(0.7) !important;
+        transform-origin: left top !important;
+        margin-bottom: -6em !important;
+    }
+    
+    #main > section {
+        transform: scale(0.7) !important;
+        transform-origin: left top !important;
+        margin-bottom: -6em !important;
+    }
+
+    #banner {
+        transform: none !important;
+    }
+
+    hr.solid {
+        margin: 0.5em 0 !important;
+    }
+
+    .wrapper.style1 {
+        padding: 0.5em 0 !important;
+    }
+}
